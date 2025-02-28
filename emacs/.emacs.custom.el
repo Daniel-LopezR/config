@@ -9,7 +9,8 @@
    '("e13beeb34b932f309fb2c360a04a460821ca99fe58f69e65557d6c1b10ba18c7" default))
  '(display-line-numbers-type 'visual)
  '(inhibit-startup-screen t)
- '(package-selected-packages '(go-mode multiple-cursors smex gruber-darker-theme))
+ '(package-selected-packages
+   '(company go-eldoc eglot go-mode multiple-cursors smex gruber-darker-theme))
  '(warning-minimum-level :error))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

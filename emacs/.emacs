@@ -12,6 +12,7 @@
 (ido-everywhere 1)
 
 (global-display-line-numbers-mode)
+(setq-default tab-width 4)
 
 (global-set-key (kbd "C-,")         'duplicate-line)
 
@@ -30,10 +31,17 @@
 (global-set-key (kbd "C-\"")        'mc/skip-to-next-like-this)
 (global-set-key (kbd "C-:")         'mc/skip-to-previous-like-this)
 
+
+(require 'company)
+(require 'go-eldoc)
 (require 'go-mode)
 ;won't work because i'm not using lsp mode
-;(add-hook 'go-mode-hook 'lsp-deferred)
+(add-hook 'go-mode-hook 'lsp-deferred)
 
 (add-hook 'before-save-hook 'gofmt-before-save)
 
 (load-file custom-file)
+
+(require 'eglot)
+(add-hook 'go-mode-hook #'eglot-ensure)
+(add-hook 'after-init-hook 'global-company-mode)
